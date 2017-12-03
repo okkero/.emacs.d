@@ -14,10 +14,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
- '(package-selected-packages (quote (haskell-mode fsharp-mode idris-mode elm-mode))))
+ '(package-selected-packages
+   (quote
+    (crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Fira Code" :foundry "CTDB" :slant normal :weight normal :height 128 :width normal)))))
+(add-to-list 'load-path "/home/ole/.opam/system/share/emacs/site-lisp/")
+(load "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file")
