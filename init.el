@@ -24,4 +24,8 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Fira Code" :foundry "CTDB" :slant normal :weight normal :height 128 :width normal)))))
 (add-to-list 'load-path "/home/ole/.opam/system/share/emacs/site-lisp/")
-(load "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file")
+
+(setq-default indent-tabs-mode nil)
+
+
+(if (file-exists-p "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file") (load "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file"))
