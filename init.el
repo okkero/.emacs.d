@@ -16,7 +16,7 @@
  '(custom-enabled-themes (quote (wombat)))
  '(package-selected-packages
    (quote
-    (yaml-mode magit crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
+    (company-irony irony yaml-mode magit crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,3 +29,19 @@
 
 
 (if (file-exists-p "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file") (load "/home/ole/.opam/system/share/emacs/site-lisp/tuareg-site-file"))
+
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+(global-set-key (kbd "M-RET") 'company-complete)
+
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
