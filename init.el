@@ -59,3 +59,6 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
