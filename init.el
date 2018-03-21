@@ -14,6 +14,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
+ '(markdown-command "pandoc")
  '(package-selected-packages
    (quote
     (markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
