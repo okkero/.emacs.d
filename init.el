@@ -47,6 +47,7 @@
 (add-hook 'racer-mode-hook #'eldoc-mode)
 
 (add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'erlang-mode-hook #'company-erlang-init)
 
 (require 'rust-mode)
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
