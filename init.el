@@ -17,7 +17,7 @@
  '(markdown-command "pandoc")
  '(package-selected-packages
    (quote
-    (clojure-mode kotlin-mode paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
+    (rainbow-delimiters clojure-mode kotlin-mode paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
