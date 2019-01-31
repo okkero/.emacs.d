@@ -17,7 +17,7 @@
  '(markdown-command "pandoc")
  '(package-selected-packages
    (quote
-    (rainbow-delimiters clojure-mode kotlin-mode company-erlang erlang paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
+    (elixir-mode rainbow-delimiters clojure-mode kotlin-mode company-erlang erlang paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,9 +37,15 @@
 (global-set-key (kbd "M-RET") 'company-complete)
 
 
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
+(defun my-irony-mode-on ()
+  ;; avoid enabling irony-mode in modes that inherits c-mode, e.g: php-mode
+  (when (member major-mode irony-supported-major-modes)
+    (irony-mode 1)))
+
+
+(add-hook 'c++-mode-hook 'my-irony-mode-on)
+(add-hook 'c-mode-hook 'my-irony-mode-on)
+(add-hook 'objc-mode-hook 'my-irony-mode-on)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
@@ -64,3 +70,5 @@
 
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(setq erlang-indent-level 2)
