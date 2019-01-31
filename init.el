@@ -17,13 +17,14 @@
  '(markdown-command "pandoc")
  '(package-selected-packages
    (quote
-    (elixir-mode rainbow-delimiters clojure-mode kotlin-mode company-erlang erlang paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode))))
+    (elixir-mode rainbow-delimiters clojure-mode kotlin-mode company-erlang erlang paredit glsl-mode markdown-mode arduino-mode php-mode nasm-mode csharp-mode dotnet racer intero company-irony irony yaml-mode magit rust-mode crystal-mode haskell-mode fsharp-mode idris-mode elm-mode)))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight normal :height 128 :width normal)))))
+ '(default ((t (:family "Monaco" :foundry "bitstream" :slant normal :weight normal :height 128 :width normal)))))
 (add-to-list 'load-path "/home/ole/.opam/system/share/emacs/site-lisp/")
 
 (setq-default indent-tabs-mode nil)
@@ -71,4 +72,7 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(setq erlang-indent-level 2)
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta
+      x-select-enable-clipboard t
+      erlang-indent-level 2)
